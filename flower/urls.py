@@ -1,7 +1,7 @@
 import os
 
 from tornado.web import StaticFileHandler, url
-import tornado.web.RequestHandler
+import tornado
 
 from .api import events
 from .api import control
