@@ -27,7 +27,7 @@ settings = dict(
 
 
 handlers = [
-    url(f"http://localhost:{os.environ['ORCHESTRA_PORT']}", tornado.web.RequestHandler, name='orchestra'),
+    url(f"http://{os.environ['ORCHESTRA_HOSTNAME']}:{os.environ['ORCHESTRA_PORT']}", tornado.web.RequestHandler, name='orchestra'),
     # App
     url(r"/", DashboardView, name='main'),
     url(r"/dashboard", DashboardView, name='dashboard'),
