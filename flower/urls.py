@@ -1,6 +1,7 @@
 import os
 
 from tornado.web import StaticFileHandler, url
+import tornado.web.RequestHandler
 
 from .api import events
 from .api import control
@@ -26,6 +27,7 @@ settings = dict(
 
 
 handlers = [
+    url(r"http://localhost:{os.environ['ORCHESTRA_PORT']}", tornado.web.RequestHandler, name='orchestra')
     # App
     url(r"/", DashboardView, name='main'),
     url(r"/dashboard", DashboardView, name='dashboard'),
